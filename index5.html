@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Английский с Викторией Кулагиной</title>
+  <style>
+ /* КОНТАКТЫ */
+    .contacts {
+      background: #fff9c4;
+      padding: 30px 20px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      color: #2c3e50;
+    }
+    .contacts h2 {
+      margin-bottom: 12px; font-size: 1.5em;
+    }
+    .contacts .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background: #4b7bec;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: background .3s;
+    }
+    .contacts .btn:hover {
+      background: #3a6fc1;
+    }
+    html, body {
+      margin: 0; padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e3f2fd;
+      color: #2c3e50;
+    }
+    header {
+      background: #4b7bec;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .logo-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    .logo-animated {
+      height: 60px;
+      transition: transform .4s, opacity .4s;
+      opacity: .9;
+    }
+    .logo-animated:hover {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    header h1 { margin: 0; font-size: 1.8em; }
+    header p { margin: 5px 0 0; font-size: 1em; }
+
+    section {
+      padding: 30px 20px 20px;
+      text-align: center;
+    }
+    /* ОБО МНЕ */
+    .about-me {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 15px;
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .about-me img {
+      width: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #4b7bec;
+    }
+    .about-me h2 { margin: 0 0 8px; font-size: 1.4em; }
+    .about-me p { margin: 0; font-size: 1em; }
+
+    /* ЧТО Я ПРЕДЛАГАЮ */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .feature-box {
+      background: #fff;
+      color: #2c3e50;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 230px;
+      transition: transform .3s, box-shadow .3s;
+      cursor: pointer;
+    }
+    .feature-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .feature-box h3 { margin: 0 0 10px; font-size: 1.2em; }
+
+    /* ФОРМАТЫ ЗАНЯТИЙ */
+    .formats {
+      background: #e8f5e9;
+      color: #2c3e50;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .formats h2 { margin-bottom: 12px; font-size: 1.4em; }
+    .formats ul {
+      list-style: inside square;
+      padding-left: 20px;
+      margin: 0;
+      font-size: 1em;
+    }
+
+    /* УСПЕХИ УЧЕНИКОВ */
+    .successes {
+      background: #fce4ec;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .successes h2 { font-size: 1.4em; margin-bottom: 12px; }
+    .successes ul {
+      list-style: inside circle;
+      padding-left: 20px;
+      margin: 0;
+      font-size: 1em;
+    }
+
+    /* ОТЗЫВЫ */
+    .reviews {
+      background: #fff3e0;
+      padding: 20px;
+      margin: 0 auto 30px;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      color: #2c3e50;
+    }
+    .reviews h2 { font-size: 1.5em; margin-bottom: 12px; }
+    .review {
+      margin: 15px auto;
+      font-style: italic;
+      position: relative;
+      max-width: 700px;
+      line-height: 1.4em;
+    }
+    .review::before {
+      content: "“";
+      font-size: 3em;
+      position: absolute;
+      top: -10px; left: -10px;
+      color: rgba(0,0,0,.1);
+    }
+    .review-author {
+      margin-top: 8px;
+      font-weight: bold;
+      text-align: right;
+    }
+    .reviews a { color: #2c3e50; text-decoration: underline; }
+
+    /* ИГРА */
+    #game {
+      background: #fff;
+      padding: 20px;
+      margin: 0 auto 30px;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      color: #2c3e50;
+    }
+    #game h2 { color: #d63031; }
+    #game select, #game input {
+      padding: 6px; margin: 5px; font-size: 1em;
+    }
+    #game button {
+      padding: 8px 16px; font-size: 1em;
+      background: #d63031; color: #fff;
+      border: none; border-radius: 4px; cursor: pointer;
+      margin: 5px;
+    }
+    #game button:hover { background: #c0392b; }
+    #game p { margin: 8px 0; }
+
+    footer {
+      background: #4b7bec;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+    }
+
+    @keyframes correctFlash {0%,100%{background:#d4edda;}50%{background:#c3e6cb;}}
+    @keyframes wrongShake {0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}50%{transform:translateX(5px);}75%{transform:translateX(-5px);}}
+    @keyframes pulseTimer {0%,100%{color:#2c3e50;}50%{color:#e74c3c;}}
+    @keyframes scoreUp {0%,100%{transform:scale(1);}50%{transform:scale(1.3);color:#27ae60;}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-block">
+      <img src="logo.png" alt="LOGO" class="logo-animated"/>
+      <div>
+        <h1>Английский с Викторией Кулагиной</h1>
+        <p>Весёлые и эффективные уроки для детей и подростков</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ОБО МНЕ -->
+  <section class="about-me">
+    <img src="viktoria.jpg" alt="Фото Виктории Кулагиной"/>
+    <div>
+      <h2>Привет! Я Виктория</h2>
+      <p>Лингвист-преподаватель высшей категории с 7-летним стаж<br>ем в школе и более 10 лет в качестве репетитора.</p>
+    </div>
+  </section>
+
+  <!-- ЧТО Я ПРЕДЛАГАЮ -->
+  <section>
+    <h2>Что я предлагаю</h2>
+    <div class="features">
+      <div class="feature-box">
+        <h3>📚 Грамматика без скуки</h3>
+        <p>Понятные объяснения и интерактивные упражнения</p>
+      </div>
+      <div class="feature-box">
+        <h3>🗣️ Разговорная практика</h3>
+        <p>Игры, ролевые диалоги и уверенность в разговоре</p>
+      </div>
+      <div class="feature-box">
+        <h3>📋 Экзаменационная подготовка</h3>
+        <p>ОГЭ, ЕГЭ, тесты – всегда готовые материалы</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФОРМАТЫ ЗАНЯТИЙ -->
+  <section class="formats">
+    <h2>Форматы занятий</h2>
+    <ul>
+      <li>Индивидуальные занятия</li>
+      <li>Занятия в паре</li>
+      <li>Занятия в мини-группе (4–5 человек)</li>
+    </ul>
+  </section>
+
+  <!-- УСПЕХИ УЧЕНИКОВ -->
+  <section class="successes">
+    <h2>Успехи моих учеников</h2>
+    <ul>
+      <li>Средний результат по ЕГЭ — 80+ баллов</li>
+      <li>Результаты ОГЭ не ниже «4»</li>
+      <li>Сдача вступительного в кадетское училище за месяц</li>
+      <li>Повышение успеваемости с 2 до 4 за 3 месяца и избавление страха говорить</li>
+      <li>Призёры и победители школьных и муниципальных олимпиад</li>
+    </ul>
+  </section>
+
+  <!-- ОТЗЫВЫ -->
+  <section class="reviews">
+    <h2>Отзывы моих учеников</h2>
+    <div class="review">
+      Спасибо за уроки! Мой ребёнок стал увереннее говорить и всегда ждёт следующего занятия.
+      <div class="review-author">— Ольга, мама ученика</div>
+    </div>
+    <div class="review">
+      «Виктория делает грамматику понятной, а уроки — увлекательными.»
+      <div class="review-author">— Мария, ученица 9 класса</div>
+    </div>
+    <p>Больше отзывов — в <a href="https://vk.com/proenglishkulagina" target="_blank">VK-сообществе</a></p>
+  </section>
+
+  <!-- ИГРА -->
+  <section id="game">
+    <h2>🎮 Мини-игра: Угадай слово</h2>
+    <label>Тема:
+      <select id="topic" onchange="setLevel()">
+        <option value="animals">Животные</option>
+        <option value="holidays">Праздники</option>
+        <option value="verbs">Глаголы</option>
+      </select>
+    </label>
+    <label>Уровень:
+      <select id="level" onchange="setLevel()">
+        <option value="easy">Лёгкий</option>
+        <option value="medium">Средний</option>
+        <option value="hard">Сложный</option>
+      </select>
+    </label>
+    <p id="hint">Подсказка: выберите тему и уровень</p>
+    <input type="text" id="guess" placeholder="Введите слово"/>
+    <button onclick="checkGuess()">Проверить</button>
+    <p id="result"></p>
+    <p id="timer">⏱️ Осталось: 30 сек</p>
+    <p id="score">🏆 Очки: 0</p>
+    <button onclick="restartGame()">🔁 Начать заново</button>
+
+    <audio id="correctSound" src="https://www.soundjay.com/button/sounds/button-3.mp3"></audio>
+    <audio id="wrongSound"   src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
+    <audio id="timeoutSound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"></audio>
+  </section>
+
+  <section class="contacts">
+    <h2>Контакты</h2>
+    <p>Записаться на урок:</p>
+    <a href="tel:+79154979712" class="btn">📞 +7 (915) 497-97-12</a>
+    <p>Присоединяйтесь в VK:</p>
+    <a href="https://vk.com/proenglishkulagina" class="btn" target="_blank">
+      🔗 VK.com/proenglishkulagina
+    </a>
+  </section>
+  <footer>
+    © 2025 Pro «Английский с Викторией Кулагиной». Все права защищены.
+  </footer>
+
+  <script>
+    let hintBank = {
+      animals: {
+        easy: [
+          {hint:"Small and purrs", answer:"cat"},
+          {hint:"Barks", answer:"dog"},
+          {hint:"Jumps in pouch", answer:"kangaroo"},
+          {hint:"Stripes", answer:"zebra"},
+          {hint:"Long neck", answer:"giraffe"},
+          {hint:"Swims", answer:"fish"},
+          {hint:"Has mane", answer:"lion"},
+          {hint:"Eats ants", answer:"anteater"},
+          {hint:"Armored shell", answer:"armadillo"},
+          {hint:"Nocturnal bird", answer:"owl"}
+        ],
+        medium: [
+          {hint:"Rolls into ball", answer:"hedgehog"},
+          {hint:"Speckled coat", answer:"leopard"},
+          {hint:"Can imitate speech", answer:"parrot"},
+          {hint:"Big ears", answer:"elephant"},
+          {hint:"Lives in hive", answer:"bee"},
+          {hint:"Spiny coating", answer:"porcupine"},
+          {hint:"Black and white bear", answer:"panda"},
+          {hint:"Fastest land animal", answer:"cheetah"},
+          {hint:"Lays eggs", answer:"platypus"},
+          {hint:"Carnivorous big cat", answer:"tiger"}
+        ],
+        hard: [
+          {hint:"Has prehensile tail", answer:"lemur"},
+          {hint:"Blubber layer", answer:"whale"},
+          {hint:"Camouflages", answer:"chameleon"},
+          {hint:"No leg movement", answer:"sloth"},
+          {hint:"Flightless bird", answer:"ostrich"},
+          {hint:"Pouch for young", answer:"kangaroo"},
+          {hint:"Eats bamboo", answer:"panda"},
+          {hint:"Aquatic mammal", answer:"dolphin"},
+          {hint:"Sharp quills", answer:"porcupine"},
+          {hint:"Desert dweller", answer:"camel"}
+        ]
+      },
+      holidays: {
+        easy: [
+          {hint:"Tree, gifts, Santa", answer:"christmas"}, {hint:"Egg hunt", answer:"easter"},
+          {hint:"Turkeys", answer:"thanksgiving"}, {hint:"Trick or treat", answer:"halloween"},
+          {hint:"Hearts", answer:"valentine"}, {hint:"Green parades", answer:"stpatricks"},
+          {hint:"Lights of Hanukkah", answer:"hanukkah"}, {hint:"Diya lamps", answer:"diwali"},
+          {hint:"New calendar", answer:"newyear"}, {hint:"Poems about moms", answer:"mothersday"}
+        ],
+        medium: [
+          {hint:"Carnival in Brazil", answer:"carnival"}, {hint:"Beer festival", answer:"oktoberfest"},
+          {hint:"Day of the Dead", answer:"dayofthedead"}, {hint:"Labour rights", answer:"laborday"},
+          {hint:"Remembrance WWI", answer:"armistice"}, {hint:"Civic pride", answer:"independence"},
+          {hint:"Cherry blossoms", answer:"hanami"}, {hint:"Lanterns in mid-spring", answer:"qingming"},
+          {hint:"Ghana week-long", answer:"kwanzaa"}, {hint:"Palm branches", answer:"palm"}
+        ],
+        hard: [
+          {hint:"Harvest thanks", answer:"sukkot"}, {hint:"Festival of Colors", answer:"holi"},
+          {hint:"Harvest moon", answer:"chuseok"}, {hint:"Ghost stories", answer:"samhain"},
+          {hint:"Lanterns to Buddha", answer:"vesak"}, {hint:"Kite flying", answer:"makara"},
+          {hint:"Full moon harvest", answer:"zhongqiu"}, {hint:"Gunpowder ban", answer:"bonfire"},
+          {hint:"Ritual bathing", answer:"kumbh"}, {hint:"Mask parades", answer:"mardi"}
+        ]
+      },
+      verbs: {
+        easy: [
+          {hint:"Present of go", answer:"go"},    {hint:"Present of eat", answer:"eat"},
+          {hint:"Present of run", answer:"run"},  {hint:"Present of read", answer:"read"},
+          {hint:"Present of write", answer:"write"},{hint:"Present of swim", answer:"swim"},
+          {hint:"Present of sleep", answer:"sleep"},{hint:"Present of drink",answer:"drink"},
+          {hint:"Present of play", answer:"play"},{hint:"Present of talk",answer:"talk"}
+        ],
+        medium: [
+          {hint:"Past of go", answer:"went"}, {hint:"Past of eat", answer:"ate"},
+          {hint:"Past of run", answer:"ran"}, {hint:"Past of read",answer:"read"},
+          {hint:"Past of write",answer:"wrote"},{hint:"Past of swim",answer:"swam"},
+          {hint:"Past of sleep",answer:"slept"},{hint:"Past of drink",answer:"drank"},
+          {hint:"Past of play",answer:"played"},{hint:"Past of talk",answer:"talked"}
+        ],
+        hard: [
+          {hint:"Past part. of go",answer:"gone"},{hint:"Past part. of eat",answer:"eaten"},
+          {hint:"Past part. of run",answer:"run"},{hint:"Past part. of write",answer:"written"},
+          {hint:"Past part. of swim",answer:"swum"},{hint:"Past part. of sleep",answer:"slept"},
+          {hint:"Past part. of drink",answer:"drunk"},{hint:"Past part. of speak",answer:"spoken"},
+          {hint:"Past part. of catch",answer:"caught"},{hint:"Past part. of teach",answer:"taught"}
+        ]
+      }
+    };
+
+    let correctAnswer="", timer, timeLeft, score=0, currentIndex=0;
+    const topicEl=document.getElementById("topic"),
+          levelEl=document.getElementById("level"),
+          hintEl=document.getElementById("hint"),
+          guessEl=document.getElementById("guess"),
+          resultEl=document.getElementById("result"),
+          timerEl=document.getElementById("timer"),
+          scoreEl=document.getElementById("score"),
+          correctSound=document.getElementById("correctSound"),
+          wrongSound=document.getElementById("wrongSound"),
+          timeoutSound=document.getElementById("timeoutSound");
+
+    function setLevel(){
+      clearInterval(timer);
+      currentIndex=0;
+      loadQuestion();
+    }
+    function loadQuestion(){
+      let t=topicEl.value, l=levelEl.value;
+      let q=hintBank[t][l][currentIndex];
+      hintEl.textContent="Подсказка: "+q.hint;
+      correctAnswer=q.answer;
+      guessEl.value="";
+      resultEl.textContent="";
+      timerEl.style.animation="";
+      startTimer();
+    }
+    function startTimer(){
+      clearInterval(timer);
+      timeLeft=30;
+      timerEl.textContent=`⏱️ Осталось: ${timeLeft} сек`;
+      timer=setInterval(()=>{
+        timeLeft--;
+        timerEl.textContent=`⏱️ Осталось: ${timeLeft} сек`;
+        if(timeLeft===10) timerEl.style.animation="pulseTimer 1s infinite";
+        if(timeLeft<=0){
+          clearInterval(timer);
+          resultEl.textContent="⏰ Время вышло!";
+          resultEl.style.color="orange";
+          timeoutSound.play();
+        }
+      },1000);
+    }
+    function checkGuess(){
+      clearInterval(timer);
+      let ans=guessEl.value.trim().toLowerCase();
+      if(ans===correctAnswer){
+        resultEl.textContent="✅ Правильно!";
+        resultEl.style.color="green";
+        resultEl.style.animation="correctFlash .6s";
+        correctSound.play();
+        score+=10; scoreEl.textContent=`🏆 Очки: ${score}`; scoreEl.style.animation="scoreUp .5s";
+        setTimeout(nextQuestion,1500);
+      } else {
+        resultEl.textContent="❌ Попробуй ещё!";
+        resultEl.style.color="red"; resultEl.style.animation="wrongShake .4s";
+        wrongSound.play();
+        score=Math.max(0,score-2); scoreEl.textContent=`🏆 Очки: ${score}`;
+      }
+    }
+    function nextQuestion(){
+      let t=topicEl.value,l=levelEl.value;
+      currentIndex++;
+      if(currentIndex>=hintBank[t][l].length){
+        hintEl.textContent="🎉 Всё пройдено!"; return;
+      }
+      loadQuestion();
+    }
+    function restartGame(){
+      score=0; scoreEl.textContent=`🏆 Очки: ${score}`; setLevel();
+    }
+    setLevel();
+  </script>
+</body>
+</html>
+```
