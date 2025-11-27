@@ -10,9 +10,10 @@
       font-family: 'Segoe UI', sans-serif;
       background: #e3f2fd;
       color: #2c3e50;
-      padding-top: 60px; /* компенсация высоты фиксированной навигации */
+      padding-top: 70px; /* Компенсация высоты navbar + отступ для мобилок */
       margin: 0;
     }
+
     .navbar {
       position: fixed;
       top: 0;
@@ -21,21 +22,33 @@
       background: #4b7bec;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 10px 0;
+      flex-wrap: wrap; /* Перенос на новую строку при нехватке места */
+      gap: 8px;
+      padding: 10px 5px; /* Уменьшил горизонтальные отступы для мобилок */
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
+
     .navbar a {
       color: white;
       text-decoration: none;
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: 6px;
+      font-size: 0.9em;
       transition: background 0.3s;
+      white-space: nowrap; /* Не переносить текст внутри ссылки */
     }
+
     .navbar a:hover {
-      background: #3a6fc1;
+      background: #4b7bec;
+    }
+
+    /* Адаптивность: на очень маленьких экранах уменьшаем шрифт */
+    @media (max-width: 480px) {
+      .navbar a {
+        font-size: 0.8em;
+        padding: 5px 8px;
+      }
     }
 
     /* === КОНТАКТЫ === */
@@ -80,7 +93,7 @@
       gap: 15px;
     }
     .logo-animated {
-      height: 100px;
+      height: 80px; /* Увеличено с 60px */
       transition: transform .4s, opacity .4s;
       opacity: .9;
     }
@@ -543,3 +556,4 @@
   </script>
 </body>
 </html>
+
