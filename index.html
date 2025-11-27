@@ -5,7 +5,40 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Английский с Викторией Кулагиной</title>
   <style>
- /* КОНТАКТЫ */
+    /* === НАВИГАЦИЯ === */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e3f2fd;
+      color: #2c3e50;
+      padding-top: 60px; /* компенсация высоты фиксированной навигации */
+      margin: 0;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #4b7bec;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .navbar a:hover {
+      background: #3a6fc1;
+    }
+
+    /* === КОНТАКТЫ === */
     .contacts {
       background: #fff9c4;
       padding: 30px 20px;
@@ -33,14 +66,7 @@
     .contacts .btn:hover {
       background: #3a6fc1;
     }
-    html, body {
-      margin: 0; padding: 0;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #e3f2fd;
-      color: #2c3e50;
-    }
+
     header {
       background: #4b7bec;
       color: #fff;
@@ -54,7 +80,7 @@
       gap: 15px;
     }
     .logo-animated {
-      height: 60px;
+      height: 100px;
       transition: transform .4s, opacity .4s;
       opacity: .9;
     }
@@ -69,8 +95,9 @@
       padding: 30px 20px 20px;
       text-align: center;
     }
-    /* ОБО МНЕ */
-    .about-me {
+
+    /* === ОБО МНЕ === */
+    #about.about-me {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -91,7 +118,7 @@
     .about-me h2 { margin: 0 0 8px; font-size: 1.4em; }
     .about-me p { margin: 0; font-size: 1em; }
 
-    /* ЧТО Я ПРЕДЛАГАЮ */
+    /* === ЧТО Я ПРЕДЛАГАЮ === */
     .features {
       display: flex;
       flex-wrap: wrap;
@@ -115,7 +142,7 @@
     }
     .feature-box h3 { margin: 0 0 10px; font-size: 1.2em; }
 
-    /* ФОРМАТЫ ЗАНЯТИЙ */
+    /* === ФОРМАТЫ ЗАНЯТИЙ === */
     .formats {
       background: #e8f5e9;
       color: #2c3e50;
@@ -134,7 +161,7 @@
       font-size: 1em;
     }
 
-    /* УСПЕХИ УЧЕНИКОВ */
+    /* === УСПЕХИ УЧЕНИКОВ === */
     .successes {
       background: #fce4ec;
       padding: 20px;
@@ -152,7 +179,7 @@
       font-size: 1em;
     }
 
-    /* ОТЗЫВЫ */
+    /* === ОТЗЫВЫ === */
     .reviews {
       background: #fff3e0;
       padding: 20px;
@@ -184,7 +211,7 @@
     }
     .reviews a { color: #2c3e50; text-decoration: underline; }
 
-    /* ИГРА */
+    /* === ИГРА === */
     #game {
       background: #fff;
       padding: 20px;
@@ -223,6 +250,17 @@
 </head>
 <body>
 
+  <!-- ФИКСИРОВАННАЯ НАВИГАЦИЯ -->
+  <nav class="navbar">
+    <a href="#about">Обо мне</a>
+    <a href="#features">Что я предлагаю</a>
+    <a href="#formats">Форматы занятий</a>
+    <a href="#successes">Успехи учеников</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#game">Игра</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+
   <header>
     <div class="logo-block">
       <img src="logo.png" alt="LOGO" class="logo-animated"/>
@@ -234,7 +272,7 @@
   </header>
 
   <!-- ОБО МНЕ -->
-  <section class="about-me">
+  <section id="about" class="about-me">
     <img src="viktoria.jpg" alt="Фото Виктории Кулагиной"/>
     <div>
       <h2>Привет! Я Виктория</h2>
@@ -243,7 +281,7 @@
   </section>
 
   <!-- ЧТО Я ПРЕДЛАГАЮ -->
-  <section>
+  <section id="features">
     <h2>Что я предлагаю</h2>
     <div class="features">
       <div class="feature-box">
@@ -262,7 +300,7 @@
   </section>
 
   <!-- ФОРМАТЫ ЗАНЯТИЙ -->
-  <section class="formats">
+  <section id="formats" class="formats">
     <h2>Форматы занятий</h2>
     <ul>
       <li>Индивидуальные занятия</li>
@@ -272,7 +310,7 @@
   </section>
 
   <!-- УСПЕХИ УЧЕНИКОВ -->
-  <section class="successes">
+  <section id="successes" class="successes">
     <h2>Успехи моих учеников</h2>
     <ul>
       <li>Средний результат по ЕГЭ — 80+ баллов</li>
@@ -284,7 +322,7 @@
   </section>
 
   <!-- ОТЗЫВЫ -->
-  <section class="reviews">
+  <section id="reviews" class="reviews">
     <h2>Отзывы моих учеников</h2>
     <div class="review">
       Спасибо за уроки! Мой ребёнок стал увереннее говорить и всегда ждёт следующего занятия.
@@ -327,7 +365,8 @@
     <audio id="timeoutSound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"></audio>
   </section>
 
-  <section class="contacts">
+  <!-- КОНТАКТЫ -->
+  <section id="contacts" class="contacts">
     <h2>Контакты</h2>
     <p>Записаться на урок:</p>
     <a href="tel:+79154979712" class="btn">📞 +7 (977) 439-55-72</a>
@@ -336,6 +375,7 @@
       🔗 VK.com/proenglishkulagina
     </a>
   </section>
+
   <footer>
     © 2025 Pro «Английский с Викторией Кулагиной». Все права защищены.
   </footer>
@@ -503,6 +543,3 @@
   </script>
 </body>
 </html>
-
-```
-
